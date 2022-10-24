@@ -1,0 +1,454 @@
+/*
+Theme Name:     Elfrida 
+Description:    Child theme for the twentytwentyone theme 
+Author:         Birdhive Development & Design
+Author URI:     https://birdhive.com
+Template:       twentytwentyone
+Version:        0.1
+*/
+
+/*
+
+COLORS
+---------------
+body background: #ECE9D8 (alt: #eeeadd)
+
+#736F69 -- grey (med/light main background -- very close to #ccc)
+#66625f -- dark grey
+#96918d -- medium/light grey
+#E3E2E1 -- very light grey
+#E71105 -- medium red
+#990000 -- dark red
+
+FONTS
+---------------
+font-family: Montserrat, "Helvetica Neue", sans-serif;
+font-family: "Open Sans", Helvetica, Arial, sans-serif;
+font-family: helvetica, arial, sans-serif;
+font-family: Merriweather, Georgia, serif;
+
+***
+*/
+
+:root {
+    
+    --branding--logo--max-width: 300px;
+    --branding--logo--max-height: 250px;
+    --branding--logo--max-width-mobile: 96px;
+    --branding--logo--max-height-mobile: 96px;
+    
+}
+
+
+
+/* Begin general site styles */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow-x: hidden; /* important to stop bounce effect on tablets */
+	overflow-y: auto;
+}
+
+html {
+	/*font-size: 85%; /* In most browsers, 100% defaults to 16 pixels > 85% = 13.6px ~ more or less match old site with fixed default font-size: 13px; */
+}
+
+/*body {
+	background: #66625f;
+    color: #333333;
+	font-size: 1rem;
+	line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body.devsite {
+	border: 5px solid red;
+}*/
+
+/*** Scrollbar ***/
+
+/* width */
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #E3E2E1;
+	opacity: 0.5;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #96918d; 
+	border-radius: 0.9rem;
+	opacity: 0.5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #736F69;
+	border-radius: 0.9rem;
+	opacity: 0.5;
+}
+
+/* Deal w/ overlap issues between stick header & jump links */
+
+/* Ultimately, this is the correct place for scroll-padding */
+html {
+	scroll-padding-top: 300px; /* height of sticky header */
+}
+/* This works in Chrome 73, but NOT FOR LONG. */
+body {
+	scroll-padding-top: 300px; /* height of sticky header */
+}
+
+
+/*** HEADER ***/
+
+.site-header > .site-logo {
+    width: auto;
+    border-bottom: none;
+}
+
+.site-title {
+    font-size: 1.9rem;
+    text-transform: none;
+    font-family: "Trajan", "Cinzel", "EB Garamond", "Baskerville", "Palatino Linotype", "Palatino", "Century Schoolbook L", "Times New Roman", serif;
+}
+
+.site-title > a {
+     text-decoration: none;   
+}
+
+.primary-navigation {
+    background-color: #E3C591;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/*** FOOTER ***/
+
+.site-footer > .site-info {
+    text-align: right;
+}
+
+/* General/Override styles */
+
+.post-thumbnail, 
+.entry-content .wp-audio-shortcode, 
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), 
+*[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce), 
+.default-max-width {
+    /*max-width: var(--responsive--aligndefault-width);*/
+    max-width: var(--responsive--alignwide-width);
+}
+
+.posts_archive article .entry-header {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.posts_archive article .entry-title {
+    font-size: var(--global--font-size-lg);
+}
+
+.posts_archive article .post-thumbnail,
+.posts_archive article .entry-content .post-thumbnail,
+.posts_archive article .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+    width: inherit;
+    margin-right: 1rem;
+}
+
+/*** DEV & TROUBLESHOOTING ***/
+
+.troubleshooting,
+.troubleshooting.inline {
+	display: none;
+    text-align: left;
+}
+
+div.dev-view {
+	margin: 1rem 0;
+}
+
+.dev-view .troubleshooting {
+	display: block;
+	padding: 1rem;
+	background-color: #91F718;
+}
+
+
+.dev-view .troubleshooting.inline {
+	display: inline;
+    background-color: transparent;
+	color: #42A406;
+	padding: 0 1rem;
+	margin-bottom: 0;
+}
+
+.smaller {
+    font-size: 0.9em;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.hidden {
+    display: none;
+}
+
+.devsite table.program tr.hidden,
+.dev-view table.program tr.hidden{
+    display: table-row;
+    opacity: 0.5;
+}
+
+.borderless,
+.entry-content h2.borderless {
+    border: none;
+}
+
+.float-left {
+	float: left;
+    margin-right: 0.5rem;
+}
+
+.float-right {
+	float: right;
+    margin-left: 0.5rem;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.rightalign {
+	text-align: right;
+}
+
+.centeralign {
+	text-align: center;
+}
+
+.halfwidth {
+	width: 49%;
+}
+
+.minwidth {
+	min-width: 400px;
+}
+
+.padded {
+	padding: 1rem;
+}
+
+/*******************************************
+***** RESPONSIVITY (aka MEDIA QUERIES) *****
+********************************************/
+
+/*** Hover Capability ***/
+
+/* Primary input mechanism system can 
+   hover over elements with ease */
+@media (hover: hover) { 
+}
+
+/* Primary input mechanism cannot hover 
+   at all or cannot conveniently hover 
+   (e.g., many mobile devices emulate hovering
+   when the user performs an inconvenient long tap), 
+   or there is no primary pointing input mechanism */
+@media (hover: none) { 
+
+}
+
+/*** Pointer Quality ***/
+
+/* The primary input mechanism of the device includes a pointing device of limited accuracy. */
+@media (pointer: coarse) { /*...*/ }
+
+/* The primary input mechanism of the device includes an accurate pointing device. */
+@media (pointer: fine) { /*...*/ }
+
+/* The primary input mechanism of the device does not include a pointing device. */
+@media (pointer: none) { /*...*/ }
+
+/*** "Rare Interaction Capabilities" to deal w/ devices with multiple input mechanisms ***/
+
+/* One or more available input mechanism(s) 
+   can hover over elements with ease */
+@media (any-hover: hover) { /*...*/ }
+
+/* One or more available input mechanism(s) can hover, 
+   but not easily (e.g., many mobile devices emulate 
+   hovering when the user performs a long tap) */
+@media (any-hover: on-demand) { /*...*/ }
+
+/* One or more available input mechanism(s) cannot 
+   hover (or there are no pointing input mechanisms) */
+@media (any-hover: none) { /*...*/ }
+
+
+/* At least one input mechanism of the device 
+   includes a pointing device of limited accuracy. */
+@media (any-pointer: coarse) { /*...*/ }
+
+/* At least one input mechanism of the device 
+   includes an accurate pointing device. */
+@media (any-pointer: fine) { /*...*/ }
+
+/* The device does not include any pointing device. */
+@media (any-pointer: none) { /*...*/ }
+
+
+
+/**
+ * 14.0.2 - >= 480px (?)
+ */
+
+@media screen and (min-width: 30em) {
+
+    .primary-navigation .primary-menu-container > ul > .menu-item > a + .sub-menu-toggle {
+        margin-left: -1.4rem;
+    }
+
+}
+
+
+/* *** */
+@media (max-width: 600px) { /* Changed from 600px to 800px 08/23/21 */
+    
+    
+
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) { /* Changed from 600px to 800px 08/23/21 */
+    
+    
+
+}
+
+/**
+ * 14.01 - >= 640px
+ */
+/**
+ * At this size, the hamburger menu toggle is replaced by the normal menu with dropdown sub-menus
+???
+ */
+
+
+
+/**
+ * 14.1 - >= 710px
+ */
+
+@media screen and (min-width: 44.375em) {
+	
+    
+    
+}
+
+
+
+/**
+ * 14.2.1 - >= 720px?
+ */
+
+@media screen and (min-width: 45em) {
+
+}
+
+
+/**
+ * 14.2 - >= 783px
+ */
+
+@media screen and (min-width: 48.9375em) {
+    
+    
+	
+}
+
+/*** NOTE: MAX-width query. */
+@media screen and (max-width: 50em) {
+	
+    
+}
+
+/*** NOTE: MAX-width query. */
+@media screen and (max-width: 56em) {
+    
+    
+    
+}
+
+/**
+ * 14.2.1 - >= 800px -- Tablet: Portrait
+ */
+
+@media screen and (min-width: 56em) { /* was 50em*/
+
+    
+    
+}
+
+/**
+ * 14.3 - >= 910px
+ */
+
+@media screen and (min-width: 56.875em) {
+	
+
+}
+
+/**
+ * 14.4 - >= 985px
+ */
+
+@media screen and (min-width: 61.5625em) {
+    
+
+	
+}
+
+/**
+ * 14.5 - >= 1200px
+ */
+
+@media screen and (min-width: 75em) {
+	
+	
+	
+}
+
+@media screen and (min-width: 80rem) {
+
+	
+}
+
+@media screen and (min-width: 1200px) { /* was 1500px */
+
+
+}
+
+@media screen and (min-width: 1248px) {
+	
+
+}
+
+/*** INTERNET FUCKING EXPLORER ***/
+_:-ms-lang(x), .ie10up { 
+    right: 5rem;
+}
