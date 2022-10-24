@@ -1,0 +1,165 @@
+/*** MISC CMS styles ***/
+
+.float-left,
+.acf-field.float-left {
+	float: left;
+    margin-right: 0.5rem;
+    width: auto;
+    clear: none;
+}
+
+.float-right,
+.acf-field.float-right {
+	float: right;
+    margin-left: 0.5rem;
+    width: auto;
+    clear: none;
+}
+
+.clear-left,
+.acf-field.clear-left,
+.acf-field[data-width].acf-field.clear-left {
+    clear: left;
+}
+
+.clear-right,
+.acf-field.clear-right,
+.acf-field[data-width].acf-field.clear-right {
+    clear: right;
+}
+
+/* Un-bury tooltips */
+.CodeMirror-lint-tooltip {
+    z-index: 99;
+}
+
+/* Hide the Custom Sidebars plugin visibility controls -- use Jetpack tool instead */
+.wp-core-ui .button.csb-visibility-button,
+.csb-visibility-button {
+	display: none;
+}
+
+.twocol {
+	width: 48%;
+	float: left;
+}
+
+/*** ACF form/field styles ***/
+
+.acf-field.float-left .acf-label label,
+.acf-field.float-left p.description {
+    display: inline;
+}
+
+.acf-field.float-left p.description {
+    margin-left: 0.5rem;
+}
+
+p.description {
+    font-style: italic;
+}
+
+/*
+.acf-relationship .list {
+    height: 80px !important;
+    font-size: 0.75rem;
+}*/
+
+.acf-relationship .selection .values {
+    color: #EE720C;
+    font-weight: 700;
+}
+
+.acf-repeater td.acf-fields {
+    background-color: transparent;
+}
+
+.acf-repeater .acf-table>tbody>tr>td {
+    border-bottom: 4px solid #ffa500;
+}
+
+ul.acf-radio-list li, 
+ul.acf-checkbox-list li {
+    display: inline-block;
+    width: 48%;
+}
+
+ul.acf-radio-list li label, 
+ul.acf-checkbox-list li label {
+    padding-right: 1rem;
+}
+
+#acf-admin-tool-export ul.acf-radio-list li label, 
+#acf-admin-tool-export ul.acf-checkbox-list li label {
+    display: inline-block;
+}
+
+/*** ACF repeater rows -- styling for collapsed state ***/
+
+.acf-repeater .acf-row.-collapsed > .acf-fields > .acf-field.-collapsed-target .acf-relationship .list {
+    height: auto;
+}
+
+.acf-repeater .acf-row.-collapsed > .acf-fields > .acf-field.acf-field-relationship.-collapsed-target .filters,
+.acf-repeater .acf-row.-collapsed > .acf-fields > .acf-field.acf-field-relationship.-collapsed-target .selection .choices,
+.acf-repeater .acf-row.-collapsed > .acf-fields > .acf-relationship .filters,
+.acf-repeater .acf-row.-collapsed > .acf-fields > .acf-relationship .selection .choices {
+    display: none;
+}
+
+/* The following styles were devised for a more flexible, compact view of repeater fields. Commented out because AG prefers one field per row. Keeping for now in case he changes his mind. */
+/*
+.acf-repeater div.acf-field {
+    border: none;
+    display: inline-table;
+    width: auto;
+    padding: 0.5rem 0;
+}
+
+.acf-repeater div.acf-field:first-child {
+    border-top: none;
+}
+
+.acf-repeater div.acf-field .acf-label {
+    background-color: transparent;
+    display: block;
+}
+
+.acf-repeater div.acf-field .acf-label:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.acf-repeater div.acf-field .acf-input {
+    background-color: transparent;
+    display: block;
+    padding: 0.01rem;
+}
+
+.acf-repeater div.acf-field-true-false .acf-input {
+    text-align: center;
+}
+*/
+
+/*** EM Admin ***/
+
+/** TMP to deal w/ apparent bug that hides location drop-down after event has been published **/
+#em-location-data {
+    display: block;
+}
+
+/*div.em-location-data .em-location-map-container,
+div.em-location-data table.em-location-data th {
+    display: none;
+}*/
+
+.post-type-event .notice-warning p {
+    font-size: 0.95rem;
+    /*font-weight: 600;*/
+    line-height: 1;
+}
+
+a:active, a:hover {
+    color: orange;
+}

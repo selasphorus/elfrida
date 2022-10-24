@@ -59,7 +59,7 @@ function stc_theme_footer_scripts() {
 }
 
 // Enqueue admin styles
-//add_action( 'admin_enqueue_scripts', 'theme_enqueue_admin_scripts_and_styles' );
+add_action( 'admin_enqueue_scripts', 'theme_enqueue_admin_scripts_and_styles' );
 function theme_enqueue_admin_scripts_and_styles() {
     
     $filepath = get_stylesheet_directory() . '/admin.css';
@@ -67,7 +67,7 @@ function theme_enqueue_admin_scripts_and_styles() {
     if ( !$ver = filemtime( $filepath ) ) { // version tag based on file modification time -- for cache-busting
         $ver = ""; // TODO: find a better alternative to nothing...
     }
-    wp_enqueue_style( 'apostle-admin',  get_stylesheet_directory_uri() . '/admin.css', NULL, $ver );
+    wp_enqueue_style( 'elfrida-admin',  get_stylesheet_directory_uri() . '/admin.css', NULL, $ver );
     
 }
 
